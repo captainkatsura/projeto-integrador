@@ -41,15 +41,15 @@ app.use(express.json())
 
 const db = require('./src/database/models/index')
 
-app.get('/aaa', async (req, res) => {       // **rota GET **
-    try {
-         const arcanas = await db.Arcana.findAll()
-         res.send(arcanas)
-     } catch (e) {
-        console.log('e', e.message)
-        res.send('vish :((')
-    }
-})
+// app.get('/aaa', async (req, res) => {       // **rota GET **
+//     try {
+//          const arcanas = await db.Arcana.findAll()
+//          res.send(arcanas)
+//      } catch (e) {
+//         console.log('e', e.message)
+//         res.send('vish :((')
+//     }
+// })
 
 
 app.post('/aaa', async (req, res) => {       // **rota POST **
@@ -106,6 +106,38 @@ app.put('/aaa/:id', async (req, res) => {       // **rota PUT **
     }
 } 
 )
+
+
+//*************** acompanhando aula CRUD sequelize abaixo */
+
+app.get('/produtos', async (req, res) => {       // **rota GET **
+    try {
+         const produtos = await db.Product.findAll({
+            include: 'categoria'
+         })
+         res.send(produtos)
+     } catch (e) {
+        console.log('e', e.message)
+        res.send('vish kk')
+    }
+})
+
+
+
+app.get('/aaa', async (req, res) => {       // ** GET para ver arcanas c/ produtos **
+    try {
+         const arcanas = await db.Arcana.findAll({
+            include: "persona"
+         })
+         res.send(arcanas)
+     } catch (e) {
+        console.log('e', e.message)
+        res.send('vish :((')
+    }
+})
+
+
+
 
 
 

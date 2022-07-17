@@ -14,6 +14,13 @@ module.exports = (sequelize, dataTypes) => {
         }
     );
 
+    Arcana.associate = (models) => {
+        Arcana.hasMany(models.Product, {
+            as: "persona",
+            foreignKey: "arcana_id"
+        })
+    }
+
     return Arcana
 
 }

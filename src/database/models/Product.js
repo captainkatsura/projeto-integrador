@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
                 type: dataTypes.STRING
             },
             product_price: {
-                type: dataTypes.FLOAT
+                type: dataTypes.INTEGER
             }
         },
         {
@@ -30,6 +30,13 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false
         }
     );
+
+    Product.associate = (models) => {
+        Product.belongsTo(models.Arcana, {
+            as: 'categoria',
+            foreignKey: 'arcana_id'
+        })
+    }
 
     return Product
 
