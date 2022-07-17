@@ -1,0 +1,100 @@
+.main-container1 {
+    position: relative;
+    background-color: #243C84;
+    display: flex;
+    margin: 8px -8px;
+    width: auto;
+    padding: 26px 26px;
+    justify-content: center;
+    gap: 26px;
+}
+
+h2 {
+    font-family: 'Chakra Petch', sans-serif;
+    color: white;
+    font-size: 34px;
+    text-shadow: 2px 2px 5px purple;
+    padding-top: 12px;
+    margin-bottom: -6px;
+}
+
+.login-cadastro-box {
+    border: 3px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 82%;
+    height: 400px;
+    background-color: #151DA6;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 56px;
+    color: khaki;
+    font-size: 18px;
+    line-height: 16px;
+    width: inherit;
+    padding-left: 60px;
+}
+
+input {
+    width: 82%;
+    height: 26px;
+    border: 1px solid #9B9B9B;
+    background: plum;
+}
+
+button {
+    width: 82%;
+    height: 50px;
+    background: beige;
+    color: #15155B;
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 23px;
+    border: 2px solid white;
+    text-decoration: none;
+    transition: 1s;
+    margin-top: 22px;
+}
+
+button:hover {
+    color: beige;
+    background-color: #15155B;
+    box-shadow: 0px 1px 20px rgba(159, 159, 159, 0.65);
+}
+
+
+
+/* media queries */
+
+@media (max-width: 320px){
+    .main-container1 {
+        flex-direction: column;
+        margin: 8px -10px;
+    }
+    .login-cadastro-box {
+        height: auto;
+        justify-content: flex-start;
+        width: 98%;
+    }
+    h2 {
+        font-size: 26px;
+        padding-top: 0px;
+        margin-bottom: 10px;
+    }
+    form {
+        padding-top: 4px;
+        font-size: 16px;
+        line-height: 10px;
+        width: 106%;
+        padding-left: 16%;
+    }
+    button {
+        width: 84%;
+        margin: 10px 2px 10px;
+    }
+}

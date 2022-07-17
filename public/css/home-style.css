@@ -1,0 +1,167 @@
+.main-container1 {
+    position: relative;
+    background-color: #243C84;
+    display: flex;
+    flex-direction: column;
+    margin: 8px -8px;
+    width: auto;
+}
+
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    color: white;
+    padding-left: 40px;
+    font-size: 40px;
+    text-shadow: 2px 2px 5px purple;
+}
+
+.home-container2 {
+    display: flex;
+    margin: 54px 24px;
+    gap: 20px;
+}
+
+.jackfrost-home {
+    display: flex;
+    width: 45vw;
+    justify-content: center;
+}
+
+.png-home {
+    filter: drop-shadow(0px 0px 4px #e4d7fc);
+}
+
+.apresentacao-container2 {
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    gap: 10px;
+    align-self: center;
+}
+
+h2 {
+    margin: -12px 8px;
+    text-shadow: 1px 1px 3px white;
+}
+
+.blabla {
+    color: #e3e3e3;
+}
+
+button {
+    border: 3px groove #e4d7fc;
+    background-color: #151DA6;
+    color: #fefefe;
+    height: 44px;
+    font-size: 22px;
+}
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    height: 372px;
+    width: 100vw;
+}
+
+.banner-text {
+    font-size: 26px;
+    text-shadow: 1px 1px 3px black;
+    margin-left: 30px;
+    margin-bottom: -10px;
+}
+
+.promocoes-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.promocao {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-promo {
+    background-color: gray;
+    height: 200px;
+    width: 165px;
+    border: 2px white;
+}
+
+h3 {}
+
+
+/* media queries */
+
+@media (max-width: 320px){
+    .main-container1 {
+        margin: 8px -10px;
+    }
+    h1 {
+        font-size: 20px;
+        padding: 0px 6px;
+        display: flex;
+        text-align: center;
+    }
+    .home-container2 {
+        margin: 8px;
+        gap: 22px;
+        height: auto;
+        position: relative;
+    }
+    .jackfrost-home {
+        width: auto;
+    }
+    .png-home {
+        height: 220px;
+    }
+    .blabla {
+        display: none;
+    }
+    .apresentacao-container2 {
+        width: 40%;
+        gap: 28px;
+        margin: 0px 6px;
+        flex-direction: column;
+    }
+    h2 {
+        font-size: 20px;
+        margin: 0px;
+    }
+    button {
+        font-size: 22px;
+        margin: -12px 0px 0px;
+    }
+    section {
+        height: auto;
+        width: 100%;
+        margin: 18px 0px;
+    }
+    .banner-text {
+        font-size: 36px;
+        text-align: center;
+        margin: 12px 10px 6px;
+        padding: 0px;
+    }
+    .promocoes-container {
+        flex-direction: column;
+        gap: 10px;
+        margin: 0px 14px;
+    }
+    .img-promo {
+        height: 130px;
+        width: 114px;
+    }
+    h3 {
+        font-size: 20px;
+        color: wheat;
+        margin: 0px 4px 6px;
+    }
+    .promocao {
+        gap: 0px;
+    }
+    .texto-section {
+        margin: 10px 12px;
+    }
+}

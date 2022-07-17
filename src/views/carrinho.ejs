@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/carrinho-style.css" />
+</head>
+<body>
+
+    <%- include('./partials/header') %>
+
+    <div class="main-container1">
+        <h1>Seu carrinho de personas</h1>
+        <div class="itens-e-entrega-container">
+            <div class="itens-carrinho">
+                <div class="item-container">   <!-- tirarei quando colocar listagem com ejs -->
+                    <img class="item-pic" />
+                    <div class="details">
+                        <h3>Nome do bicho</h3>
+                        <button class="excluir-button">excluir
+                            <img class="carrinho-icons" src="/images/retirar-icon.png" />
+                        </button>
+                    </div>
+                    <div class="preco-unit">R$ 999,99</div>
+                </div>
+                <div class="item-container">   <!-- tirarei quando colocar listagem com ejs -->
+                    <img class="item-pic" />
+                    <div class="details">
+                        <h3>Nome do bicho</h3>
+                        <button class="excluir-button">excluir
+                            <img class="carrinho-icons" src="/images/retirar-icon.png" />
+                        </button>
+                    </div>
+                    <div class="preco-unit">R$ 999,99</div>
+                </div>
+                <div class="item-container">   <!-- tirarei quando colocar listagem com ejs -->
+                    <img class="item-pic" />
+                    <div class="details">
+                        <h3>Nome do bicho</h3>
+                        <button class="excluir-button">excluir
+                            <img class="carrinho-icons" src="/images/retirar-icon.png" />
+                        </button>
+                    </div>
+                    <div class="preco-unit">R$ 999,99</div>
+                </div>
+
+                <p class="preco-total">TOTAL DA COMPRA: R$ 38912,12</p>
+                <button class="continuar-button">Continuar comprando
+                    <img class="carrinho-icons2" src="/images/carrinho-de-compras.png" />
+                </button>
+            </div>
+            <div class="end-container">
+                <h2>Endereço para entrega</h2>
+                <p class="warning">Caso não seja o endereço a seguir você pode mudá-lo 
+                    na página de alteração de dados!!</p>
+                <div class="endereco">  <!--será alterado com ejs e db!-->
+                    <p>Rua xxxxxxxxx, número 3839</p>
+                    <p>Bairro ahsiahed, São José dos novos aaaaa, PQ</p>
+                </div>
+                <button class="finalizar-button">FINALIZAR COMPRA
+                    <img class="carrinho-icons2" src="/images/dinheiro-icon.png" />
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include('./partials/footer') %>
+    
+</body>
+</html>

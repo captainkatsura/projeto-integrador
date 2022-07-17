@@ -1,0 +1,157 @@
+/* header */
+
+body {
+    font-family: 'Abel', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+header {
+    position: relative;
+    top: 0px;
+    background-color: #28258D;
+    color: white;
+    text-shadow: 2px 2px 5px red;
+    height: 180px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    margin: -8px;
+}
+
+.logo {
+    display: flex;
+    height: 130px;
+    align-self: center;
+    padding-left: 40px;
+}
+
+.header-box {
+    display: flex;
+    width: 50vw;
+    justify-content: end;
+    align-items: end;
+    gap: 40px;
+    padding-right: 46px;
+}
+
+.login-cadastro {
+    padding-bottom: 16px;
+    font-size: 14px;
+}
+
+.header-user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
+
+.foto-user {
+    background-color: gray;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    margin-left: 24px;
+}
+
+.user-greeting {
+    font-size: 14px;
+}
+
+
+/* FOOTER */
+
+footer {
+    position: relative;
+    bottom: 0px;
+    display: flex;
+    height: 180px;
+    width: 100vw;
+    background-color: #15155B;
+    margin: -8px -8px;
+    justify-content: space-between;
+}
+
+.footer-container-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 36px;
+    gap: 8px;
+}
+
+.texto-contato-footer {
+    color: #e3e3e3;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.img-icon {
+    height: 46px;
+}
+
+.footer-container-right {
+    display: flex;
+    align-items: end;
+    margin-right: 36px;
+}
+
+.texto-footer-dir {
+    display: flex;
+    color: #e3e3e3;
+    font-size: 14px;
+    font-family: 'Abel', sans-serif;
+}
+
+
+/* media queries */
+
+@media (max-width: 320px){
+    header {
+        height: 120px;
+        width: 106%;
+    }
+    .logo {
+        height: 45px;
+    }
+    .login-cadastro {
+        display: none;
+    }
+    .header-box {
+        padding-right: 14px;
+    }
+    .foto-user {
+        height: 52px;
+        width: 52px;
+        margin-left: 20px; 
+    }
+    .user-greeting {
+        font-size: 10px;
+    }
+
+    /* footer aqui */
+    
+    footer {
+        height: 130px;
+        width: 106%;
+    }
+    .footer-container-left {
+        padding-left: 16px;
+        gap: 2px;
+    }
+    .img-icon {
+        height: 28px;
+    }
+    .texto-contato-footer {
+        font-size: 16px;
+    }
+    .footer-container-right {
+        margin-right: 14px;
+    }
+    .texto-footer-dir {
+        font-size: 10px;
+    }
+}

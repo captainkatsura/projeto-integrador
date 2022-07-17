@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/paginausuario-style.css" />
+<body>
+
+    <%- include('./partials/header') %>
+
+
+    <div class="main-container1">
+        <h2>Informações do usuário</h2>
+        <div class="info-container1">
+            <div class="caixa-dados1">
+                <h3>dados pessoais</h3>
+                <div class="dados-e-foto">
+                    <div class="dados">
+                        <p class="infouser">Nome</p>
+                        <p class="infouser">E-mail</p>
+                        <p class="infouser">Telefone</p>
+                        <p class="infouser">CPF</p>
+                        <p class="infouser">Data de nascimento</p>
+                        <p class="infouser">Endereço</p>
+                    </div>
+                    <div class="foto"></div>
+                </div>
+                <button>Editar</button>
+            </div>
+            <div class="caixa-dados2">   <!-- transformar com ejs -->
+                <h3>suas compras anteriores</h3>
+                <div class="produto-misc">
+                    <p class="nomeproduto">nome do produto aqui</p>
+                    <a class="produto-detalhes">Ver produto</a>
+                </div>
+                <div class="produto-misc">
+                    <p class="nomeproduto">nome do produto aqui</p>
+                    <a class="produto-detalhes">Ver produto</a>
+                </div>
+                <div class="produto-misc">
+                    <p class="nomeproduto">nome do produto aqui</p>
+                    <a class="produto-detalhes">Ver produto</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <%- include('./partials/footer') %>
+
+</body>
+</html>

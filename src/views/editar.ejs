@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/editar-style.css" />
+<body>
+    
+    <%- include('./partials/header') %>
+
+
+    <div class="main-container1">
+        <h1>Alterar dados</h1>
+        <div class="editpic">
+            <img class="currentpic" />
+            <form class="alterarfoto" action="/editar" method="POST">
+                <label>Selecionar ou trocar imagem de perfil:</label>
+                <input class="input-pic" type="file" name="avatar" accept=".jpg" multiple>
+                <button class="button-pic">Alterar imagem</button>
+            </form>
+        </div>
+        <div class="form-e-img">
+            <form action="/editar" method="POST">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" placeholder="Nome se já tiver cadastro" id="nome">  <br>
+                <label for="e-mail">Email</label> 
+                <input type="email" name="e-mail" placeholder="e-mail cadastrado se já tiver cadastro" id="e-mail">  <br>
+                <label for="telefone">Telefone</label>
+                <input type="tel" name="telefone" placeholder="Telefone cadastrado se já tiver cadastro" id="telefone"> <br>
+                <label for="cpf">CPF</label>
+                <input type="number" name="cpf" placeholder="cpf cadastrado se já tiver cadastro" id="cpf"> <br>
+                <label for="datanasc">Data de nascimento</label>
+                <input type="date" name="datanasc" placeholder="data de nasc cadastrado se já tiver cadastro" id="datanasc"> <br>
+                <label for="endrua">rua</label>
+                <input type="text" name="rua" placeholder="nome da rua cadastrado se já tiver cadastro" id="endrua"> <br>
+                <label for="endnumero">número</label>
+                <input type="number" name="endnumero" placeholder="numero de residência cadastrado se já tiver cadastro" id="endnumero"> <br>
+                <label for="bairro">Bairro</label>
+                <input type="text" name="bairro" placeholder="bairro cadastrado se já tiver cadastro" id="bairro"> <br>
+                <label for="cidade">Cidade</label>
+                <input type="text" name="cidade" placeholder="cidade cadastrado se já tiver cadastro" id="cidade"> <br>
+                <label for="estado">Estado</label>
+                <input type="text" name="estado" placeholder="estado cadastrado se já tiver cadastro" id="estado"> <br>
+                <button class="button-form">Fazer alterações</button>
+            </form>
+            <img class="random-png" src="/images/golden-fox-png.png" />
+
+        </div>
+    </div>
+
+
+
+
+    <%- include('./partials/footer') %>
+
+</body>
+</html>

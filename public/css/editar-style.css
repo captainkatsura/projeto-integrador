@@ -1,0 +1,149 @@
+.main-container1 {
+    position: relative;
+    background-color: #243C84;
+    display: flex;
+    flex-direction: column;
+    margin: 8px -8px;
+    width: auto;
+    padding: 38px 26px;
+    justify-content: center;
+    gap: 26px;
+}
+
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    color: white;
+    padding-left: 40px;
+    font-size: 34px;
+    text-shadow: 2px 2px 5px purple;
+}
+
+.editpic {
+    display: flex;
+    justify-content: center;
+}
+
+.currentpic {
+    height: 130px;
+    width: 130px;
+    background-color: gray;
+}
+
+.alterarfoto {
+    border: 3px solid white;
+    background-color: #151DA6;
+    color: #faf8c3;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {}
+
+.input-pic {
+    width: 120px;
+    height: 22px;
+    margin: 16px;
+}
+
+.button-pic {}
+
+.form-e-img {
+    display: flex;
+    justify-content: space-around;
+}
+
+form {
+    border: 3px solid salmon;
+    background-color: #151DA6;
+    color: #faf8c3;
+    width: 48vw;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 22px;
+    justify-content: space-evenly;
+}
+
+input {
+    width: 88%;
+    height: 20px;
+    border: 2px solid #9B9B9B;
+    background: white;
+}
+
+.button-form {
+    border: 3px groove red;
+    background-color: firebrick;
+    height: 54px;
+    font-size: 24px;
+    color: white;
+    margin: 0px 36px;
+    display: flex;
+    align-items: center;
+    font-family: 'Abel', sans-serif;
+    justify-content: center;
+    width: 80%;
+}
+
+.random-png {
+    display: flex;
+    height: 600px;
+    align-self: center;
+}
+
+
+/* media queries */
+
+@media (max-width: 320px){
+    .main-container1 {
+        overflow-x: hidden;
+        margin: 0px -10px;
+        padding: 0px 12px;
+    }
+    h1 {
+        align-self: center;
+        padding: 0px;
+        font-size: 38px;
+        margin: 12px 0px -10px 0px;
+    }
+    .editpic {
+        gap: 6px;
+        width: 100%;
+    }
+    .currentpic {
+        height: 114px;
+        width: 96px;
+    }
+    .alterarfoto {
+        width: 60%;
+        padding: 6px 4px;
+    }
+    label {
+        font-size: 12px;
+    }
+    input {
+        width: 96%;
+    }
+    .input-pic {
+        margin: 12px;
+    }
+    .form-e-img {
+        flex-direction: column;
+    }
+    form {
+        width: 80%;
+        align-self: center;
+        padding: 14px 22px;
+    }
+    .button-form {
+        align-self: center;
+        margin: 0px 0px;
+    }
+    .random-png {
+        width: 60%;
+        height: auto;
+        margin: 12px 0px;
+        padding: 10px 0px;
+    }
+}

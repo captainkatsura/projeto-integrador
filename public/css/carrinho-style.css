@@ -1,0 +1,254 @@
+.main-container1 {
+    position: relative;
+    background-color: #243C84;
+    display: flex;
+    flex-direction: column;
+    margin: 8px -8px;
+    width: auto;
+    padding: 26px 26px;
+    justify-content: center;
+    gap: 26px;
+}
+
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    color: white;
+    padding-left: 40px;
+    font-size: 34px;
+    text-shadow: 2px 2px 5px purple;
+}
+
+.itens-e-entrega-container {
+    display: flex;
+    justify-content: center;
+    gap: 44px;
+}
+
+.itens-carrinho {
+    display: flex;
+    flex-direction: column;
+    width: 44vw;
+    border: 3px groove #e4d7fc;
+    gap: 18px;
+    padding: 14px;
+}
+
+.item-container {
+    display: flex;
+    background-color: #cf4a4a;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item-pic {
+    height: 110px;
+    width: 100px;
+    background-color: gray;
+    border: 2px solid white;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    margin-left: -48px;
+}
+
+h3 {
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 2px 5px purple;
+    margin: 6px 10px;
+}
+
+.excluir-button {
+    border: 3px groove white;
+    background-color: #151DA6;
+    height: 45px;
+    font-size: 16px;
+    color: white;
+    margin: 4px 4px;
+    display: flex;
+    align-items: center;
+    font-family: 'Abel', sans-serif;
+    justify-content: center;
+}
+
+.carrinho-icons {
+    height: 30px;
+}
+.carrinho-icons2 {
+    height: 30px;
+}
+
+.preco-unit {
+    display: flex;
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    margin-right: 26px;
+}
+
+.preco-total {
+    color: plum;
+    text-shadow: 2px 2px 5px purple;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+}
+
+.continuar-button {
+    border: 2px solid #e4d7fc;
+    background-color: red;
+    color: #fefefe;
+    height: 44px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.end-container {
+    display: flex;
+    flex-direction: column;
+    border: 3px groove #e4d7fc;
+    justify-content: space-between;
+}
+
+h2 {
+    text-shadow: 1px 1px 3px blue;
+    color: #e4d7fc;
+    margin: 20px 28px;
+    margin-bottom: -48px;
+}
+
+.warning {
+    color: white;
+    font-size: 12px;
+    padding: 0px 20px;
+    margin-top: -210px;
+    margin-bottom: -220px;
+}
+
+.endereco {
+    background-color: darkgrey;
+    margin: 16px;
+    padding-left: 12px;
+}
+
+.finalizar-button {
+    width: 86%;
+    height: 54px;
+    background: #15155B;
+    color: plum;
+    font-weight: 700;
+    font-size: 24px;
+    border: 3px solid white;
+    text-decoration: none;
+    transition: 1s;
+    margin: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    gap: 10px;
+}
+
+.finalizar-button:hover {
+    color: #15155B;
+    background-color: plum;
+    box-shadow: 0px 1px 20px rgba(159, 159, 159, 0.65);
+}
+
+
+
+
+/* media queries */
+
+@media (max-width: 320px){
+    .main-container1 {
+        margin: 8px -10px;
+        padding: 0px;
+    }
+    .itens-e-entrega-container {
+        flex-direction: column;
+        gap: 6px;
+        position: relative;
+    }
+    h1 {
+        padding: 0px 12px;
+        font-size: 24px;
+        display: flex;
+        align-self: center;
+        margin: 14px 0px -8px;
+    }
+    .itens-carrinho {
+        width: 90%;
+        align-self: center;
+        gap: 10px;
+        padding: 6px;
+    }
+    .item-container {
+        padding: 4px;
+    }
+    .item-pic {
+        height: 96px;
+        width: 80px;
+    }
+    .details {
+        margin: 0px 4px;
+    }
+    h3 {
+        font-size: 14px;
+        margin: 8px 2px;
+        align-self: center;
+    }
+    .preco-unit {
+        font-size: 20px;
+        margin: 0px 4px;
+    }
+    .carrinho-icons {
+        height: 20px;
+    }
+    .excluir-button {
+        height: 36px;
+        font-size: 14px;
+        margin: 4px 0px;
+    }
+    .preco-total {
+        font-size: 22px;
+    }
+    .continuar-button {
+        height: 62px;
+        font-size: 22px;
+        position: relative;
+    }
+    .carrinho-icons2 {
+        height: 48px;
+    }
+    .end-container {
+        margin: 8px 8px 14px;
+        padding: 0px;
+    }
+    .warning {
+        font-size: 12px;
+        margin: -4px 6px 0px;
+        padding: 0px 4px;
+        display: flex;
+        text-align: center;
+    }
+    h2 {
+        margin: 16px;
+        padding: 0px;
+        font-size: 28px;
+    }
+    .endereco {
+        margin: 8px;
+        padding: 4px 8px;
+    }
+    .finalizar-button {
+        font-size: 22px;
+        height: 66px;
+        margin: 16px;
+        gap: 0px;
+    }
+}

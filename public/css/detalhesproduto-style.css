@@ -1,0 +1,124 @@
+.main-container1 {
+    position: relative;
+    background-color: #243C84;
+    display: flex;
+    margin: 8px -8px;
+    width: auto;
+    padding: 26px 26px;
+    justify-content: center;
+    gap: 26px;
+}
+
+.detalhes-container {
+    background-color: #272E7D;
+    border: 3px solid #e4d7fc;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 46vw;
+    align-items: center;
+    justify-content: space-around;
+}
+
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    color: white;
+    padding: 12px 40px 0px;
+    font-size: 34px;
+    text-shadow: 2px 2px 5px purple;
+}
+
+.detalhes-descricao {
+    width: 40vw;
+    display: flex;
+    align-self: center;
+    text-align: center;
+}
+
+p {
+    color: #e3e3e3;
+}
+
+.preco-e-button {
+    display: flex;
+}
+
+.preco {
+    color: aquamarine;
+    font-size: 34px;
+    margin: -3px 8px;
+}
+
+button {
+    border: 3px groove red;
+    background-color: firebrick;
+    height: 45px;
+    font-size: 22px;
+    color: white;
+    margin: -4px 10px;
+    display: flex;
+    align-items: center;
+    font-family: 'Abel', sans-serif;
+}
+
+.carrinho-icon {
+    height: 36px;
+}
+
+.img-detalhes-container {
+    height: 600px;
+    width: 440px;
+    display: flex;
+    background-color: gray;
+    border: 2px solid white;
+}
+
+
+
+/* media queries */
+
+@media (max-width: 320px){
+    .main-container1 {
+        flex-direction: column-reverse;
+        padding: 22px 22px;
+        margin: 8px -10px;
+    }
+    .img-detalhes-container {
+        height: 300px;
+        width: auto;
+    }
+    .detalhes-container {
+        width: 96%;
+        align-self: center;
+    }
+    h1 {
+        padding: 0px 14px;
+        font-size: 26px;
+    }
+    .detalhes-descricao {
+        align-self: center;
+        text-align: center;
+        width: 88%;
+    }
+    p {
+        font-size: 14px;
+    }
+    .preco-e-button {
+        flex-direction: column;
+    }
+    .preco {
+        font-size: 36px;
+        margin: 0px 8px 10px;
+        display: flex;
+        align-self: center;
+    }
+    button {
+        height: 54px;
+        font-size: 26px;
+        margin: 12px;
+        justify-content: center;
+    }
+    .carrinho-icon {
+        height: 46px;
+    }
+}

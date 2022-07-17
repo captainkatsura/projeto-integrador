@@ -1,0 +1,179 @@
+.main-container1 {
+    position: relative;
+    background-color: #243C84;
+    display: flex;
+    flex-direction: column;
+    margin: 8px -8px;
+    width: auto;
+    padding: 0px 12px;
+}
+
+h2 {
+    font-family: 'Chakra Petch', sans-serif;
+    color: white;
+    font-size: 38px;
+    padding-left: 40px;
+    margin: 26px 0px -60px;
+}
+
+.info-container1 {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin: 94px 0px;
+}
+
+.caixa-dados1 {
+    display: flex;
+    flex-direction: column;
+    background-color: cadetblue;
+    border: 2px dotted white;
+    width: 38vw;
+    height: 490px;
+    gap: 26px;
+}
+
+
+h3 {
+    padding: 8px 0px 0px 30px;
+    color: white;
+    font-size: 22px;
+    text-shadow: 2px 2px 5px purple;
+}
+
+.dados-e-foto {
+    display: flex;
+    
+}
+
+.dados {}
+
+.infouser {
+    color: #15155B;
+    padding-left: 30px;
+}
+
+.foto {
+    height: 96px;
+    width: 80px;
+    display: flex;
+    position: relative;
+    margin-left: 130px;
+    background-color: #9B9B9B;      /* qdo tiver img eu tiro isso */
+}
+
+button {
+    width: 86%;
+    height: 54px;
+    background: #15155B;
+    color: plum;
+    font-weight: 700;
+    font-size: 24px;
+    border: 3px solid white;
+    text-decoration: none;
+    transition: 1s;
+    margin: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+button:hover {
+    color: #15155B;
+    background-color: plum;
+    box-shadow: 0px 1px 20px rgba(159, 159, 159, 0.65);
+}
+
+.caixa-dados2 {
+    display: flex;
+    flex-direction: column;
+    background-color: cadetblue;
+    border: 2px dotted white;
+    width: 44vw;
+    gap: 24px;
+}
+
+.produto-misc {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nomeproduto {
+    color: #15155B;
+    font-size: 30px;
+    margin: 0px 0px;
+}
+
+.produto-detalhes {
+    color: #272E7D;
+    font-size: 25px;
+}
+
+
+
+/* media queries */
+
+@media (max-width: 320px){
+    .main-container1 {
+        margin: 8px -10px;
+    }
+    h2 {
+        font-size: 26px;
+        padding-left: 18px;
+        margin: 10px;
+    }
+    .info-container1 {
+        gap: 26px;
+        margin: 8px 8px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .caixa-dados1 {
+        width: 92%;
+        height: 500px;
+        gap: 18px;
+    }
+    h3 {
+        font-size: 26px;
+        padding: 0px;
+        margin: 16px;
+    }
+    .dados-e-foto {
+        flex-direction: column-reverse;
+    }
+    .foto {
+        width: 116px;
+        height: 132px;
+        margin-left: 26px;
+        margin-top: -24px;
+    }
+    .dados {
+        margin: -8px 10px;
+    }
+    .infouser {
+        padding: 0px;
+    }
+    button {
+        font-size: 32px;
+        margin: -2px;
+    }
+    .caixa-dados2 {
+        width: 92%;
+        gap: 20px;
+        height: auto;
+        padding-bottom: 18px;
+    }
+    .produto-misc {
+        background-color: darkgrey;
+        margin: 0px 8px;
+    }
+    .nomeproduto {
+        font-size: 18px;
+        margin: 10px 0px;
+    }
+    .produto-detalhes {
+        font-size: 16px;
+        margin: 12px 0px;
+    }
+}

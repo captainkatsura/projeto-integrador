@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/login-style.css" />
+<body>
+    
+    <%- include('./partials/header') %>
+
+    <div class="main-container1">
+        <div class="login-cadastro-box">
+            <h2>Já tenho cadastro</h2>
+            <form action="/entrar" method="POST">
+                <label for="e-mail">E-mail</label>  <br>
+                <input type="email" name="e-mail">  <br>
+                <label for="password">Senha</label>  <br>
+                <input type="password" name="password">  <br>
+                <button>ENTRAR</button>
+            </form>
+        </div>
+        <div class="login-cadastro-box">
+            <h2>Quero me cadastrar</h2>
+            <form  action="/cadastrar" method="POST">
+                <label for="e-mail">E-mail disponível</label>  <br>
+                <input type="email" name="e-mail">  <br>
+                <label for="password">Senha desejada</label>  <br>
+                <input type="password" name="password">  <br>
+                <button>começar cadastro</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <%- include('./partials/footer') %>
+
+</body>
+</html>
