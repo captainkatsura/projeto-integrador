@@ -26,10 +26,10 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'purchase_address'
         });
         Purchase.belongsToMany(models.Product, {
-            through: 'purchase_products',
             as: 'produtos da compra',
-            foreignKey: 'product_id',
-            otherKey: 'purchase_id',
+            through: 'purchase_products',
+            foreignKey: 'purchase_id',
+            otherKey: 'product_id',
             timestamps: false
         })
     }

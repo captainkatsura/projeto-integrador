@@ -1,7 +1,13 @@
+const { validationResult } = require('express-validator');
+
 const loginController = {
-    login: (req, res) => {
+    main: (req, res) => {
         res.render('login');
     },
+    login: (req, res) => {
+
+        res.redirect('/home')
+    }
 };
 
 

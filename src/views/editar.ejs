@@ -11,7 +11,7 @@
         <h1>Alterar dados</h1>
         <div class="editpic">
             <img class="currentpic" />
-            <form class="alterarfoto" action="/editar" method="POST">
+            <form class="alterarfoto" action="/editar" method="POST" enctype="multipart/form-data">
                 <label>Selecionar ou trocar imagem de perfil:</label>
                 <input class="input-pic" type="file" name="avatar" accept=".jpg" multiple>
                 <button class="button-pic">Alterar imagem</button>

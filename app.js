@@ -1,10 +1,20 @@
 const express = require('express');
 const app = express();
 const PORT = 5000;
-const db = require('./src/database/models/index')
+const db = require('./src/database/models/index');
+const methodOverride = require('method-override');
+const fs = require('fs');
+const multer = require('multer');
+const createError = require('http-errors')
+
+
 
 //********** middlewares     ## adicionando *********/
-app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(methodOverride('_method'))
+
+
 
 
 //**************import das rotas **********/
@@ -32,7 +42,7 @@ app.use(compraconcluidaRouter);
 
 
 
-//************abaixo daqui é para ignorar até a linha 154 aprox */
+//************abaixo daqui é para ignorar até a linha 165 aprox */
 
 
 
@@ -122,7 +132,9 @@ app.put('/aaa/:id', async (req, res) => {       // **rota PUT **
 app.get('/aaa', async (req, res) => {       // ** GET para ver arcanas c/ produtos **
     try {
          const arcanas = await db.Arcana.findAll({
-            include: "persona"
+            include: [
+                {association: "persona"}
+            ]
          })
          res.send(arcanas)
      } catch (e) {
@@ -146,7 +158,7 @@ app.get('/produtosss', async (req, res) => {       // **rota GET com associate u
 })
 
 
-// o que está entre esta linha e a 35 é lixo
+// o que está entre esta linha e a 45 é lixo
 
 
 
