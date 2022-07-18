@@ -17,5 +17,16 @@ module.exports = (sequelize, dataTypes) => {
         timestamps:false
     });
 
+    Address.associate = (models) => {
+        Address.hasMany(models.User, {
+            as: "usuário",
+            foreignKey: "address_id"
+        });
+        Address.hasMany(models.Purchase, {
+            as: "produto(s)",
+            foreignKey: "purchase_address"
+        })
+    };
+
     return Address
 }

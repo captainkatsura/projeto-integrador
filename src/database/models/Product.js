@@ -33,10 +33,21 @@ module.exports = (sequelize, dataTypes) => {
 
     Product.associate = (models) => {
         Product.belongsTo(models.Arcana, {
-            as: 'categoria',
+            as: "categoria",
             foreignKey: 'arcana_id'
+        });
+        Product.hasMany(models.User, {
+            as: "comprador",
+            foreignKey: "user_id"
+        });
+        Product.belongsToMany(models.Purchase, {
+            through: 'purchase_products',
+            as: 'produtos da compra',
+            foreignKey: 'purchase_id',
+            otherKey: 'product_id',
+            timestamps: false
         })
-    }
+  };
 
     return Product
 

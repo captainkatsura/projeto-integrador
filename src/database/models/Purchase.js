@@ -16,21 +16,23 @@ module.exports = (sequelize, dataTypes) => {
         }
     );
 
+    Purchase.associate = (models) => {
+        Purchase.belongsTo(models.User, {
+            as: 'compra',
+            foreignKey: 'user_id'
+        });
+        Purchase.belongsTo(models.Address, {
+            as: 'endereço de entrega',
+            foreignKey: 'purchase_address'
+        });
+        Purchase.belongsToMany(models.Product, {
+            through: 'purchase_products',
+            as: 'produtos da compra',
+            foreignKey: 'product_id',
+            otherKey: 'purchase_id',
+            timestamps: false
+        })
+    }
 
     return Purchase
-
 }
-
-// Purchase.associate = function(models) {
-//     Purchase.belongsTo(models.User, {
-//         as: "users",
-//         foreignKey: "id",
-//         timestamps:false
-//     });
-//     Purchase.hasOne(models.Address, {
-//         as: "addresses",
-//         foreignKey: "id",
-//         timestamps:false
-//     })
-
-// }

@@ -1,14 +1,10 @@
 const express = require('express');
 const app = express();
 const PORT = 5000;
+const db = require('./src/database/models/index')
 
-//************view engine etc **********/
-app.set('view engine', 'ejs');
-app.set('views', './src/views');
-app.use(express.static('public'));
-
-
-
+//********** middlewares     ## adicionando *********/
+app.use(express.json())
 
 
 //**************import das rotas **********/
@@ -34,12 +30,11 @@ app.use(carrinhoRouter);
 app.use(compraconcluidaRouter);
 
 
-//************segunda tentativa maldita sprint roxa */
-
-app.use(express.json())
 
 
-const db = require('./src/database/models/index')
+//************abaixo daqui é para ignorar até a linha 154 aprox */
+
+
 
 // app.get('/aaa', async (req, res) => {       // **rota GET **
 //     try {
@@ -110,17 +105,17 @@ app.put('/aaa/:id', async (req, res) => {       // **rota PUT **
 
 //*************** acompanhando aula CRUD sequelize abaixo */
 
-app.get('/produtos', async (req, res) => {       // **rota GET **
-    try {
-         const produtos = await db.Product.findAll({
-            include: 'categoria'
-         })
-         res.send(produtos)
-     } catch (e) {
-        console.log('e', e.message)
-        res.send('vish kk')
-    }
-})
+// app.get('/produtos', async (req, res) => {       // **rota GET **
+//     try {
+//          const produtos = await db.Product.findAll({
+//             include: 'categoria'
+//          })
+//          res.send(produtos)
+//      } catch (e) {
+//         console.log('e', e.message)
+//         res.send('vish kk')
+//     }
+// })
 
 
 
@@ -138,9 +133,30 @@ app.get('/aaa', async (req, res) => {       // ** GET para ver arcanas c/ produt
 
 
 
+app.get('/produtosss', async (req, res) => {       // **rota GET com associate usando model intermediária **
+    try {
+         const produtos = await db.Product.findAll({
+            include: 'comprador'
+         })
+         res.send(produtos)
+     } catch (e) {
+        console.log('e', e.message)
+        res.send('vish kk')
+    }
+})
+
+
+// o que está entre esta linha e a 35 é lixo
+
 
 
 
 
 //********************* meu app.listen ****************/
 app.listen(PORT, () => { console.log('rodando na porta 5000!!') });
+
+
+//************view engine etc **********/
+app.set('view engine', 'ejs');
+app.set('views', './src/views');
+app.use(express.static('public'));
