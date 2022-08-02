@@ -1,16 +1,31 @@
-var db = require('../database/models/index')
+var db = require('../database/models/index');
+const Product = require('../database/models/Product');
+
+
 
 const listagemController = {
-    index: (req, res) => {
-        res.render('listagem');
-    },
-    categorias: async (req, res) => {       // **rota GET **
+    index: async (req, res) => {
         try {
-             const produtos = await db.Product.findAll({
-                include: 'categoria'
+            const products = await db.Product.findAll({
+                include: "arcana"
+            })
+            res.render('listagem', { products: products })
+        } catch (e) {
+            console.log('e', e.message)
+            res.send('deu erro e depois eu coloco mais info aqui')
+        }
+
+    ;
+    },
+    categorias: async (req, res) => {       // //passar isso p/ home
+        try {
+             const products = await db.Product.findAll({
+                include: [
+                    {association: 'persona'}
+                ]
              })
              res.render('listagem', {
-                produtos
+                products
              })
          } catch (e) {
             console.log('e', e.message)

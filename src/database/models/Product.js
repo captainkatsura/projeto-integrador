@@ -1,3 +1,5 @@
+const PurchaseProduct = require("./PurchaseProduct");
+
 module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define('Product', {
@@ -33,17 +35,13 @@ module.exports = (sequelize, dataTypes) => {
 
     Product.associate = (models) => {
         Product.belongsTo(models.Arcana, {
-            as: "categoria",
+            as: "arcana",
             foreignKey: 'arcana_id'
-        });
-        Product.hasMany(models.User, {
-            as: "comprador",
-            foreignKey: "user_id"
         });
         Product.belongsToMany(models.Purchase, {
             as: 'produtos da compra',
-            through: 'purchase_products',
             foreignKey: 'product_id',
+            through: 'purchase_products',
             otherKey: 'purchase_id',
             timestamps: false
         })
@@ -52,3 +50,4 @@ module.exports = (sequelize, dataTypes) => {
     return Product
 
 }
+

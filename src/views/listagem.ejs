@@ -10,70 +10,25 @@
     <div class="main-container1">
         <h2>Lista de demônios</h2>
         <div class="lista-produtos">
+
+  
+            <% products.map((persona) => { %>
+
+
             <div class="produto">
                 <div class="produto-img"></div> <!--colocarei o link p img no css-->
                 <div class="produto-infos">
-                    <h3>Nome do demonho aqui</h3>
+                    <h3><%= persona.persona_name %></h3>
                     <div class="produto-misc">
-                        <p class="preco">R$ 999,00</p>
-                        <a class="produto-detalhes">Mais detalhes</a>
+                        <p class="preco">R$ <%= persona.product_price %>,00</p>
+                        <a class="produto-detalhes" href="./detalhesproduto">Mais detalhes</a>
                         <button class="button-carrinho">Adicionar
                             <img class="carrinho-icon" src="/images/carrinho-de-compras.png" /></button>
                     </div>
                 </div>
             </div>
 
-            <div class="produto">
-                <div class="produto-img"></div> <!--colocarei o link p img no css-->
-                <div class="produto-infos">
-                    <h3>Nome do demonho aqui</h3>
-                    <div class="produto-misc">
-                        <p class="preco">R$ 999,00</p>
-                        <a class="produto-detalhes">Mais detalhes</a>
-                        <button class="button-carrinho">Adicionar
-                            <img class="carrinho-icon" src="/images/carrinho-de-compras.png" /></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="produto">
-                <div class="produto-img"></div> <!--colocarei o link p img no css-->
-                <div class="produto-infos">
-                    <h3>Nome do demonho aqui</h3>
-                    <div class="produto-misc">
-                        <p class="preco">R$ 999,00</p>
-                        <a class="produto-detalhes">Mais detalhes</a>
-                        <button class="button-carrinho">Adicionar 
-                            <img class="carrinho-icon" src="/images/carrinho-de-compras.png" /></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="produto">
-                <div class="produto-img"></div> <!--colocarei o link p img no css-->
-                <div class="produto-infos">
-                    <h3>Nome do demonho aqui</h3>
-                    <div class="produto-misc">
-                        <p class="preco">R$ 999,00</p>
-                        <a class="produto-detalhes">Mais detalhes</a>
-                        <button class="button-carrinho">Adicionar 
-                            <img class="carrinho-icon" src="/images/carrinho-de-compras.png" /></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="produto">
-                <div class="produto-img"></div> <!--colocarei o link p img no css-->
-                <div class="produto-infos">
-                    <h3>Nome do demonho aqui</h3>
-                    <div class="produto-misc">
-                        <p class="preco">R$ 999,00</p>
-                        <a class="produto-detalhes">Mais detalhes</a>
-                        <button class="button-carrinho">Adicionar 
-                            <img class="carrinho-icon" src="/images/carrinho-de-compras.png" /></button>
-                    </div>
-                </div>
-            </div>
+        <% }) %>
             
             
         </div>

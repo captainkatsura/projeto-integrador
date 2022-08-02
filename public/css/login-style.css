@@ -1,3 +1,4 @@
+
 .main-container1 {
     position: relative;
     background-color: #243C84;
@@ -6,16 +7,13 @@
     width: auto;
     padding: 26px 26px;
     justify-content: center;
-    gap: 26px;
 }
 
 h2 {
     font-family: 'Chakra Petch', sans-serif;
     color: white;
-    font-size: 34px;
+    font-size: 30px;
     text-shadow: 2px 2px 5px purple;
-    padding-top: 12px;
-    margin-bottom: -6px;
 }
 
 .login-cadastro-box {
@@ -24,31 +22,29 @@ h2 {
     flex-direction: column;
     align-items: center;
     width: 82%;
-    height: 400px;
+    height: 380px;
     background-color: #151DA6;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    padding-top: 56px;
     color: khaki;
     font-size: 18px;
-    line-height: 16px;
-    width: inherit;
-    padding-left: 60px;
+    line-height: 12px;
+    width: 400px;
 }
 
 input {
-    width: 82%;
+    width: inherit;
     height: 26px;
     border: 1px solid #9B9B9B;
     background: plum;
 }
 
 button {
-    width: 82%;
-    height: 50px;
+    width: inherit;
+    height: 40px;
     background: beige;
     color: #15155B;
     text-align: center;
@@ -72,9 +68,12 @@ button:hover {
 /* media queries */
 
 @media (max-width: 320px){
+    header {
+        width: 109%;
+    }
     .main-container1 {
         flex-direction: column;
-        margin: 8px -10px;
+        margin: 8px -17px;
     }
     .login-cadastro-box {
         height: auto;
@@ -87,14 +86,16 @@ button:hover {
         margin-bottom: 10px;
     }
     form {
-        padding-top: 4px;
         font-size: 16px;
         line-height: 10px;
-        width: 106%;
-        padding-left: 16%;
+        width: 90%;
+        padding-bottom: 8px;
     }
     button {
-        width: 84%;
-        margin: 10px 2px 10px;
+        width: inherit;
+        margin: 10px 2px 8px;
+    }
+    footer {
+        width: 109%;
     }
 }

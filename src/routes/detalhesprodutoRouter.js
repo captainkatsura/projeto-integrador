@@ -4,7 +4,7 @@ const router = express.Router();
 const detalhesprodutoController = require('../controllers/detalhesprodutoController');
 
 
-router.get('/detalhes', detalhesprodutoController.detalhes);
+router.get('/detalhesproduto', detalhesprodutoController.detalhes);
 
 
 module.exports = router;

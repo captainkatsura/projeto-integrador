@@ -26,9 +26,9 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'purchase_address'
         });
         Purchase.belongsToMany(models.Product, {
-            as: 'produtos da compra',
-            through: 'purchase_products',
+            as: 'compra que contém o produto',
             foreignKey: 'purchase_id',
+            through: 'purchase_products',
             otherKey: 'product_id',
             timestamps: false
         })

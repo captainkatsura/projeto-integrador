@@ -16,6 +16,12 @@ app.use(methodOverride('_method'))
 
 
 
+//************view engine etc **********/
+app.set('view engine', 'ejs');
+app.set('views', './src/views');
+app.use(express.static('public'));
+
+
 
 //**************import das rotas **********/
 const homeRouter = require('./src/routes/homeRouter');
@@ -26,6 +32,7 @@ const paginausuarioRouter = require('./src/routes/paginausuarioRouter');
 const editarRouter = require('./src/routes/editarRouter');
 const carrinhoRouter = require('./src/routes/carrinhoRouter');
 const compraconcluidaRouter = require('./src/routes/compraconcluidaRouter');
+
 
 
 
@@ -46,15 +53,16 @@ app.use(compraconcluidaRouter);
 
 
 
-// app.get('/aaa', async (req, res) => {       // **rota GET **
-//     try {
-//          const arcanas = await db.Arcana.findAll()
-//          res.send(arcanas)
-//      } catch (e) {
-//         console.log('e', e.message)
-//         res.send('vish :((')
-//     }
-// })
+
+app.get('/aaa', async (req, res) => {       // **rota GET (categorias)**
+     try {
+          const arcanas = await db.Arcana.findAll()
+          res.send(arcanas)
+     } catch (e) {
+         console.log('e', e.message)
+        res.send('vish :((')
+    }
+ })
 
 
 app.post('/aaa', async (req, res) => {       // **rota POST **
@@ -132,9 +140,7 @@ app.put('/aaa/:id', async (req, res) => {       // **rota PUT **
 app.get('/aaa', async (req, res) => {       // ** GET para ver arcanas c/ produtos **
     try {
          const arcanas = await db.Arcana.findAll({
-            include: [
-                {association: "persona"}
-            ]
+        include: "persona"
          })
          res.send(arcanas)
      } catch (e) {
@@ -145,10 +151,10 @@ app.get('/aaa', async (req, res) => {       // ** GET para ver arcanas c/ produt
 
 
 
-app.get('/produtosss', async (req, res) => {       // **rota GET com associate usando model intermediária **
+app.get('/produtosss', async (req, res) => {       // UNICA Q FUNFA MOSTRANDO INCLUDE
     try {
          const produtos = await db.Product.findAll({
-            include: 'comprador'
+            include: "arcana"
          })
          res.send(produtos)
      } catch (e) {
@@ -158,7 +164,24 @@ app.get('/produtosss', async (req, res) => {       // **rota GET com associate u
 })
 
 
-// o que está entre esta linha e a 45 é lixo
+
+
+
+
+app.get('/produtosss/:id', async (req, res) => {       // GET pra ver um só
+    try {
+         const produtos = await db.Product.findAll({
+            include: "arcana"
+         })
+         res.send(produtos)
+     } catch (e) {
+        console.log('e', e.message)
+        res.send('vish kk')
+    }
+})
+
+
+// o que está entre esta linha e a 51 é lixo
 
 
 
@@ -168,7 +191,3 @@ app.get('/produtosss', async (req, res) => {       // **rota GET com associate u
 app.listen(PORT, () => { console.log('rodando na porta 5000!!') });
 
 
-//************view engine etc **********/
-app.set('view engine', 'ejs');
-app.set('views', './src/views');
-app.use(express.static('public'));

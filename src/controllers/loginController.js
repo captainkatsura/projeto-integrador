@@ -5,8 +5,14 @@ const loginController = {
         res.render('login');
     },
     login: (req, res) => {
+        const errors = validationResult(req);
 
-        res.redirect('/home')
+        if (!errors.isEmpty()) {
+            console.log(errors.mapped())
+            return res.render('home', { errors: errors.mapped() })
+        }
+
+        res.redirect('/')
     }
 };
 
