@@ -32,7 +32,12 @@ h1 {
     width: 40vw;
     display: flex;
     align-self: center;
-    text-align: center;
+    text-align: left;
+}
+
+ul {
+    color: snow;
+    font-size: 18px;
 }
 
 p {

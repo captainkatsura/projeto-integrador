@@ -21,7 +21,7 @@
                     <h3><%= persona.persona_name %></h3>
                     <div class="produto-misc">
                         <p class="preco">R$ <%= persona.product_price %>,00</p>
-                        <a class="produto-detalhes" href="./detalhesproduto">Mais detalhes</a>
+                        <a class="produto-detalhes" href="./detalhesproduto/<%= persona.id %>">Mais detalhes</a>
                         <button class="button-carrinho">Adicionar
                             <img class="carrinho-icon" src="/images/carrinho-de-compras.png" /></button>
                     </div>
