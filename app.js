@@ -181,6 +181,54 @@ app.get('/produtosss/:id', async (req, res) => {       // GET pra ver um só
 })
 
 
+
+// teste cadastro abaixo
+
+app.get('/cadastroteste', async (req, res) => {
+    try {
+         const produtos = await db.Product.findAll({
+            include: "arcana"
+         })
+         res.send(produtos)
+     } catch (e) {
+        console.log('e', e.message)
+        res.send('vish kk')
+    }
+})
+
+
+
+app.post('/cadastroteste', async (req, res) => {       
+    const data = req.body;
+
+    try {
+        await db.User.create({
+            user_name: data.user_name,
+            email: data.email,
+            cpf: data.cpf,
+            phone_number: data.phone_number,
+            senha: data.senha,
+            
+            user_picture: data.user_picture
+        })
+        await db.Address.create({
+            street: data.street,
+            house_number: data.house_number,
+            district: data.district,
+            cep: data.cep,
+            city: data.city,
+            state: data.state,
+            country: data.country
+        }) 
+        ;
+        res.send("registrado com sucesso!!")
+    } catch(e) {
+        res.send("não foi, tsc ;/")
+    }
+} 
+)
+
+
 // o que está entre esta linha e a 51 é lixo
 
 

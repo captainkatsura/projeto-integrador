@@ -42,6 +42,11 @@ h2 {
     border: 2px solid white;
 }
 
+.product-img {
+    height: 130px;
+    width: 130px;
+}
+
 .produto-infos {
     display: flex;
     flex-direction: column;

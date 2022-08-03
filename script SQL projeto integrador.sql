@@ -71,7 +71,7 @@ ALTER TABLE purchase_products
 	ADD purchase_id INT NOT NULL,
 	ADD CONSTRAINT FOREIGN KEY (purchase_id) REFERENCES purchases(id);
     
-ALTER TABLE purchase_products
+ALTER TABLE purchase_productsproducts
 	ADD product_id INT NOT NULL,
 	ADD CONSTRAINT FOREIGN KEY (product_id) REFERENCES products(id);
 
@@ -176,3 +176,43 @@ VALUES ('Valkyrie', 'caminho-9', 8, 'Curabitur eget suscipit sapien. Maecenas co
 INSERT INTO products(persona_name, persona_img, persona_level, persona_description, arcana_id, product_price)
 VALUES ('Anzu', 'caminho-10', 15, 'Proin elementum, urna quis vestibulum luctus, neque felis semper est, a ultricies justo ligula eu risus.', 15, 612);
 
+
+UPDATE products SET 
+persona_img = "/DB-izanagi.jpeg"
+WHERE id = 3;
+
+UPDATE products SET 
+persona_img = "/DB-jiraiya.jpg"
+WHERE id = 4;
+
+UPDATE products SET 
+persona_img = "/DB-senri.jpg"
+WHERE id = 5;
+
+UPDATE products SET 
+persona_img = "/DB-omoikane.jpg"
+WHERE id = 6;
+
+UPDATE products SET 
+persona_img = "/DB-tomoe.png"
+WHERE id = 7;
+
+UPDATE products SET 
+persona_img = "/DB-angel.png"
+WHERE id = 8;
+
+UPDATE products SET 
+persona_img = "/DB-forneus.png"
+WHERE id = 9;
+
+UPDATE products SET 
+persona_img = "/DB-sandman.png"
+WHERE id = 10;
+
+UPDATE products SET 
+persona_img = "/DB-valkyrie.png"
+WHERE id = 11;
+
+UPDATE products SET 
+persona_img = "/DB-anzu.png"
+WHERE id = 12;
