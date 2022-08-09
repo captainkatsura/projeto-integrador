@@ -4,7 +4,7 @@ const router = express.Router();
 const paginausuarioController = require('../controllers/paginausuarioController');
 
 
-router.get('/usuario', paginausuarioController.main);
+router.get('/paginausuario', paginausuarioController.main);
 
 
 module.exports = router;

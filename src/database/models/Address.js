@@ -9,6 +9,7 @@ module.exports = (sequelize, dataTypes) => {
         street:dataTypes.STRING,
         house_number:dataTypes.INTEGER,
         district:dataTypes.STRING,
+        cep: dataTypes.STRING,
         city:dataTypes.STRING,
         state:dataTypes.STRING,
         country:dataTypes.STRING

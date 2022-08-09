@@ -49,8 +49,11 @@ ALTER TABLE products
 	ADD CONSTRAINT FOREIGN KEY (arcana_id) REFERENCES arcanas(id);
     
 ALTER TABLE users
-	ADD address_id INT NOT NULL,
+	ADD address_id INT,
 	ADD CONSTRAINT FOREIGN KEY (address_id) REFERENCES addresses(id);
+    
+ALTER TABLE users
+	MODIFY address_id int
     
 ALTER TABLE purchases
 	ADD user_id INT NOT NULL,
@@ -71,7 +74,7 @@ ALTER TABLE purchase_products
 	ADD purchase_id INT NOT NULL,
 	ADD CONSTRAINT FOREIGN KEY (purchase_id) REFERENCES purchases(id);
     
-ALTER TABLE purchase_productsproducts
+ALTER TABLE purchase_products
 	ADD product_id INT NOT NULL,
 	ADD CONSTRAINT FOREIGN KEY (product_id) REFERENCES products(id);
 
@@ -216,3 +219,9 @@ WHERE id = 11;
 UPDATE products SET 
 persona_img = "/DB-anzu.png"
 WHERE id = 12;
+
+-- //////////////////////////////////////////////////////////////////////
+
+
+SELECT * FROM users
+SELECT * FROM addresses

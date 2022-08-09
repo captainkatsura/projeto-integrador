@@ -5,14 +5,21 @@ const db = require('./src/database/models/index');
 const methodOverride = require('method-override');
 const fs = require('fs');
 const multer = require('multer');
-const createError = require('http-errors')
+const createError = require('http-errors');
+const session = require('express-session')
 
 
 
 //********** middlewares     ## adicionando *********/
+app.use(session( {
+    secret: "Mensagem secreta aqui",
+    resave: true,
+    saveUninitialized: true
+}));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
+
 
 
 
@@ -49,7 +56,7 @@ app.use(compraconcluidaRouter);
 
 
 
-//************abaixo daqui é para ignorar até a linha 165 aprox */
+//************abaixo daqui é para ignorar até a linha 238 aprox */
 
 
 
@@ -186,10 +193,10 @@ app.get('/produtosss/:id', async (req, res) => {       // GET pra ver um só
 
 app.get('/cadastroteste', async (req, res) => {
     try {
-         const produtos = await db.Product.findAll({
-            include: "arcana"
+         const usuarios = await db.User.findAll({
+            include: "endereço"
          })
-         res.send(produtos)
+         res.send(usuarios)
      } catch (e) {
         console.log('e', e.message)
         res.send('vish kk')
@@ -198,38 +205,37 @@ app.get('/cadastroteste', async (req, res) => {
 
 
 
-app.post('/cadastroteste', async (req, res) => {       
-    const data = req.body;
+app.post('/cadastroteste', async (req, res) => {   //falta validação !!
+    const data = req.body;                      //OK de verdade
+    // console.log('data', data);
 
     try {
-        await db.User.create({
-            user_name: data.user_name,
-            email: data.email,
-            cpf: data.cpf,
-            phone_number: data.phone_number,
-            senha: data.senha,
-            
-            user_picture: data.user_picture
-        })
-        await db.Address.create({
-            street: data.street,
-            house_number: data.house_number,
-            district: data.district,
-            cep: data.cep,
-            city: data.city,
-            state: data.state,
-            country: data.country
-        }) 
-        ;
-        res.send("registrado com sucesso!!")
-    } catch(e) {
-        res.send("não foi, tsc ;/")
-    }
-} 
-)
+        let newAddress = await db.Address.create({
+        street: data.street,
+        house_number: data.house_number,
+        district: data.district,
+        cep: data.cep,
+        city: data.city,
+        state: data.state,
+        country: data.country
+    })
+    await db.User.create({
+        user_name: data.user_name,
+        email: data.email,
+        cpf: data.cpf,
+        phone_number: data.phone_number,
+        senha: data.senha,
+        user_picture: data.user_picture,
+        address_id: newAddress.id
+   })
+       res.send("registrado com sucesso!!")
+   } catch(e) {
+       res.send("não registrou.")
+   }
+})
 
 
-// o que está entre esta linha e a 51 é lixo
+// o que está entre esta linha e a 59 é lixo
 
 
 
@@ -237,5 +243,3 @@ app.post('/cadastroteste', async (req, res) => {
 
 //********************* meu app.listen ****************/
 app.listen(PORT, () => { console.log('rodando na porta 5000!!') });
-
-

@@ -49,6 +49,15 @@ label {}
 
 .button-pic {}
 
+ul {
+    color: #faf8c3;
+}
+
+.danger {
+    color: red;
+    margin-top: -22px;
+}
+
 .form-e-img {
     display: flex;
     justify-content: space-around;
