@@ -1,12 +1,16 @@
 const express = require('express');
 const app = express();
 const PORT = 5000;
+
 const db = require('./src/database/models/index');
 const methodOverride = require('method-override');
 const fs = require('fs');
 const multer = require('multer');
 const createError = require('http-errors');
-const session = require('express-session')
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
+const cookieMiddleware = require('./src/middlewares/cookieLogin');
 
 
 
@@ -19,6 +23,9 @@ app.use(session( {
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.use(cookieParser());
+app.use(cookieMiddleware);
+
 
 
 

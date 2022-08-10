@@ -55,7 +55,8 @@ const editarController = require('../controllers/editarController');
 
 
 router.get('/editar', editarController.main);
-router.post('/editar',uploadFile.single('user_picture'), validation, editarController.cadastrar);
+// router.post('/editar',uploadFile.single('user_picture'), validation, editarController.cadastrar);
+router.post('/editar', validation, editarController.cadastrar);
 
 
 module.exports = router;

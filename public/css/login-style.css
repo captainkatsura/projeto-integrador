@@ -63,6 +63,26 @@ button:hover {
     box-shadow: 0px 1px 20px rgba(159, 159, 159, 0.65);
 }
 
+.anchorRedirect {
+    width: 230px;
+    height: 40px;
+    background: red;
+    color: snow;
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    border: 2px solid white;
+    text-decoration: none;
+    transition: 1s;
+    margin-top: 22px;
+}
+
+.anchorRedirect:hover {
+    color: beige;
+    background-color: #15155B;
+    box-shadow: 0px 1px 20px rgba(159, 159, 159, 0.65);
+}
+
 
 
 /* media queries */

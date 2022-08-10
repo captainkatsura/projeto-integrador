@@ -14,16 +14,15 @@
                 <h3>dados pessoais</h3>
                 <div class="dados-e-foto">
                     <div class="dados">
-                        <p class="infouser">Nome</p>
-                        <p class="infouser">E-mail</p>
-                        <p class="infouser">Telefone</p>
-                        <p class="infouser">CPF</p>
-                        <p class="infouser">Data de nascimento</p>
-                        <p class="infouser">Endereço</p>
+                        <p class="infouser"><%= usuario.user_name %></p>
+                        <p class="infouser"><%= usuario.email %></p>
+                        <p class="infouser"><%= usuario.phone_number %></p>
+                        <p class="infouser"><%= usuario.cpf %></p>
+
                     </div>
                     <div class="foto"></div>
                 </div>
-                <button>Editar</button>
+                <a class="button" href="./editar">Editar</a>
             </div>
             <div class="caixa-dados2">   <!-- transformar com ejs -->
                 <h3>suas compras anteriores</h3>

@@ -56,13 +56,13 @@ h3 {
 .foto {
     height: 96px;
     width: 80px;
-    display: flex;
+    display: none;
     position: relative;
     margin-left: 130px;
     background-color: #9B9B9B;      /* qdo tiver img eu tiro isso */
 }
 
-button {
+.button {
     width: 86%;
     height: 54px;
     background: #15155B;
@@ -79,7 +79,7 @@ button {
     align-self: center;
 }
 
-button:hover {
+.button:hover {
     color: #15155B;
     background-color: plum;
     box-shadow: 0px 1px 20px rgba(159, 159, 159, 0.65);

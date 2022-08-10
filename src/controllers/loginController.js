@@ -6,20 +6,40 @@ const loginController = {   //I have no idea of what I'm doing
         res.render('login');
     },
     login: async (req, res) => {
-        let { usuarios } = require('../database/models/User');
-        let { email, senha } = req.body;
-        let usuarioSalvo = await usuarios.findOne({
-            where: {
-                email: email,
-                password: senha
-            }
-        })
 
-        if(usuarioSalvo != null){
-            res.redirect('/')
-        } else{
-            res.redirect('/editar')
-        }
+        let email = req.body.email;
+        let senha = req.body.senha;
+        let logado = req.body.logado;
+
+        try {
+            const usuarioSalvo = await db.User.findOne({
+                where: {
+                    email,
+                    senha
+                }
+            })
+
+            if(usuarioSalvo != null){
+                req.session.usuario = usuarioSalvo;
+
+                if(logado != 'undefined'){
+                    res.cookie('logado', usuarioSalvo.email, {maxAge:650000000})
+                }
+
+                res.redirect('/paginausuario')
+            } else {
+                res.redirect('/login')
+            }
+
+            console.log(usuarioSalvo)
+        }   catch(e) {console.log(e.message)}
+
+
+        // if(email != usuarios.email || senha != usuarios.senha){
+        //     return res.send("Usuário inválido!!!")
+        // }
+
+
 
         // const errors = validationResult(req);
 

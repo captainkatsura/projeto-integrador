@@ -19,14 +19,16 @@
                 <% } %>
             </ul>
             <% } %>
-            <form action="/" method="POST" enctype="multipart/form-data">
+            <form action="/paginausuario" method="POST">
                 <label for="email">E-mail</label>  <br>
                 <input type="email" name="email">  <br>
-                <label for="password">Senha</label>  <br>
-                <input type="password" name="password">  <br>
+                <label for="senha">Senha</label>  <br>
+                <input type="password" name="senha">  <br>
+                <input type="checkbox" name="logado">
+                <label for="">Manter logado?</label><br>
                 <button type="submit">ENTRAR</button>
             </form>
-            <a>CADASTRAR-SE</a>
+            <a class="anchorRedirect" href="./editar">CADASTRAR-SE</a>
         </div>
         
     </div>
