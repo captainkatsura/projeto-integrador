@@ -1,6 +1,6 @@
 const carrinhoController = {
     main: (req, res) => {
-        res.render('carrinho');
+        res.render('carrinho', { usuario:req.session.usuario });
     },
 };
 

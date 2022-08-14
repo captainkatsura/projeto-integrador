@@ -58,7 +58,7 @@ button {
 
 
 section {
-    display: flex;
+    display: none;
     flex-direction: column;
     background-color: red;
     height: 372px;

@@ -225,3 +225,9 @@ WHERE id = 12;
 
 SELECT * FROM users
 SELECT * FROM addresses
+
+ALTER TABLE users
+	MODIFY senha VARCHAR(999) NOT NULL
+    
+ALTER TABLE users
+ADD CONSTRAINT UNIQUE (email)

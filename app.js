@@ -9,7 +9,6 @@ const multer = require('multer');
 const createError = require('http-errors');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-
 const cookieMiddleware = require('./src/middlewares/cookieLogin');
 
 
@@ -25,6 +24,7 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(cookieMiddleware);
+
 
 
 
@@ -63,7 +63,7 @@ app.use(compraconcluidaRouter);
 
 
 
-//************abaixo daqui é para ignorar até a linha 238 aprox */
+//************abaixo daqui é para ignorar até a linha 204 aprox */
 
 
 
@@ -137,18 +137,6 @@ app.put('/aaa/:id', async (req, res) => {       // **rota PUT **
 
 //*************** acompanhando aula CRUD sequelize abaixo */
 
-// app.get('/produtos', async (req, res) => {       // **rota GET **
-//     try {
-//          const produtos = await db.Product.findAll({
-//             include: 'categoria'
-//          })
-//          res.send(produtos)
-//      } catch (e) {
-//         console.log('e', e.message)
-//         res.send('vish kk')
-//     }
-// })
-
 
 
 app.get('/aaa', async (req, res) => {       // ** GET para ver arcanas c/ produtos **
@@ -212,37 +200,8 @@ app.get('/cadastroteste', async (req, res) => {
 
 
 
-app.post('/cadastroteste', async (req, res) => {   //falta validação !!
-    const data = req.body;                      //OK de verdade
-    // console.log('data', data);
 
-    try {
-        let newAddress = await db.Address.create({
-        street: data.street,
-        house_number: data.house_number,
-        district: data.district,
-        cep: data.cep,
-        city: data.city,
-        state: data.state,
-        country: data.country
-    })
-    await db.User.create({
-        user_name: data.user_name,
-        email: data.email,
-        cpf: data.cpf,
-        phone_number: data.phone_number,
-        senha: data.senha,
-        user_picture: data.user_picture,
-        address_id: newAddress.id
-   })
-       res.send("registrado com sucesso!!")
-   } catch(e) {
-       res.send("não registrou.")
-   }
-})
-
-
-// o que está entre esta linha e a 59 é lixo
+// o que está entre esta linha e a 66 é lixo
 
 
 

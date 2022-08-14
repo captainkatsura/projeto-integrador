@@ -118,6 +118,30 @@ footer {
     font-family: 'Abel', sans-serif;
 }
 
+/* menu */
+
+
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #15155B;
+    height: 34px;
+}
+
+.menu-anchors {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.carrinho-pic {
+    height: 24px;
+    filter: drop-shadow(5px 5px 7px grey);
+}
+
+
+
 
 /* media queries */
 

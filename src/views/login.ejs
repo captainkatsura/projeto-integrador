@@ -5,12 +5,15 @@
 <body>
     
     <%- include('./partials/header') %>
+    <%- include('./partials/menu') %>
+
+    
 
     <div class="main-container1">
         <div class="login-cadastro-box">
             <h2>entre ou cadastre-se!</h2>
             <% if(typeof errors !== 'undefined'){ %>
-            <ul>
+            <ul class="errors-div">
                 <% for(let error in errors){ %>
                     <li>
                         <b><%= error %>:</b>

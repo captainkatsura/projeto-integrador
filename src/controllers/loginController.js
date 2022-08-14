@@ -1,7 +1,9 @@
 const { validationResult, body } = require('express-validator');
 var db = require('../database/models/index');
+const bcrypt = require('bcrypt');
+var User = require('../database/models/User')
 
-const loginController = {   //I have no idea of what I'm doing
+const loginController = {
     main: (req, res) => {
         res.render('login');
     },
@@ -12,45 +14,30 @@ const loginController = {   //I have no idea of what I'm doing
         let logado = req.body.logado;
 
         try {
+
             const usuarioSalvo = await db.User.findOne({
                 where: {
-                    email,
-                    senha
+                    email
                 }
             })
 
-            if(usuarioSalvo != null){
-                req.session.usuario = usuarioSalvo;
-
-                if(logado != 'undefined'){
-                    res.cookie('logado', usuarioSalvo.email, {maxAge:650000000})
-                }
-
-                res.redirect('/paginausuario')
-            } else {
-                res.redirect('/login')
+            if(!usuarioSalvo){
+                return res.send('e-mail não encontrado')
+            }
+            if(!bcrypt.compareSync(senha, usuarioSalvo.senha)){
+                return res.send('senha incorreta')
             }
 
+            req.session.usuario = usuarioSalvo;
+
+            if(logado != undefined){
+                res.cookie('logado', usuarioSalvo, { maxAge:180000 })
+            }
+
+            res.redirect("/paginausuario")
             console.log(usuarioSalvo)
         }   catch(e) {console.log(e.message)}
 
-
-        // if(email != usuarios.email || senha != usuarios.senha){
-        //     return res.send("Usuário inválido!!!")
-        // }
-
-
-
-        // const errors = validationResult(req);
-
-        // if (!errors.isEmpty()) {
-        //     console.log(errors.mapped())
-        //     return res.render('login', { errors: errors.mapped() })
-        // }
-
-        // req.session.usuario = usuarioSalvo // ??????
-
-        // res.render('home', {usuario:req.session.usuario})
     }
 };
 

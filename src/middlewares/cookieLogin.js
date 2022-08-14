@@ -3,7 +3,7 @@ const db = require('../database/models/index')
 const cookieLogin = async (req, res, next) => {
     if(req.cookies.logado != undefined && req.session.usuario == null){
             
-        let email = req.body.email;
+        let email = req.cookies.logado;
 
         try {
             const usuarioSalvo = await db.User.findOne({
@@ -11,7 +11,7 @@ const cookieLogin = async (req, res, next) => {
                     email: email
                 }
             }); 
-                if(usuario.email == email){
+                if(usuarioSalvo.email == email){
                     req.session.usuario = usuario
                 }
 
