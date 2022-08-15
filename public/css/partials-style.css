@@ -124,6 +124,7 @@ footer {
 
 ul {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     color: #15155B;
@@ -133,11 +134,17 @@ ul {
 .menu-anchors {
     text-decoration: none;
     font-size: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .carrinho-pic {
     height: 24px;
     filter: drop-shadow(5px 5px 7px grey);
+}
+
+.cart-qtt {
+
 }
 
 

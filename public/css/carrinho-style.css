@@ -10,6 +10,15 @@
     gap: 26px;
 }
 
+
+.teste-ls {
+    background-color: white;
+    color: black;
+    height: 70px;
+}
+
+
+
 h1 {
     font-family: 'Chakra Petch', sans-serif;
     color: white;
