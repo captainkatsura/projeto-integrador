@@ -12,26 +12,17 @@
         <div class="home-container2">
             <div class="jackfrost-home"><img class="png-home" src="/images/jackfrost1.png"/></div>
             <div class="apresentacao-container2">
-                <h2>Um mundo de possibilidades</h2>
-                <p class="blabla">Lorem ipsum dolor sit amet consectetur, adipisicing 
-                    elit. Eum, labore, quisquam quidem quia voluptatem, 
-                    quam vero cupiditate repudiandae dignissimos ipsam 
-                    tempora nam quos neque ducimus quasi fuga? Rem, 
-                    minima optio. Lorem ipsum dolor, sit amet consectetur 
-                    adipisicing elit. Quis aliquam illo ipsa illum 
-                    accusamus repudiandae aperiam perspiciatis repellat 
-                    rem nulla impedit amet, iure recusandae! Ratione 
-                    autem velit animi voluptas nesciunt. Lorem ipsum dolor 
-                    sit amet consectetur adipisicing elit. Optio quae 
-                    nesciunt obcaecati nostrum quaerat porro fuga enim, 
-                    inventore ratione ipsa magni voluptatem, quibusdam 
-                    iure nobis doloremque, natus cumque blanditiis et? 
-                    Lorem ipsum dolor sit amet consectetur, adipisicing 
-                    elit. Cupiditate dignissimos id esse aut delectus 
-                    vel, vitae quia, dolorum nesciunt accusamus dolores 
-                    iure laborum quis pariatur, consequatur dolorem cum 
-                    dicta tempora.</p>
-                <button>Explorar</button>
+                <h2>Escolha uma categoria</h2>
+                <div class="lista">
+
+                    <% arcanas.map((arcanas) => { %>
+                        <div class="arcana-list">
+                            <button class="arcana-anchorB"></button><a class="arcana-anchor" href="./listagem/"><%= arcanas.arcana_type %>></a></button>
+                        </div>
+                    <% }) %>
+
+                </div>
+                <button class="explorar">Explorar</button>
             </div>
         </div>
 
@@ -67,6 +58,8 @@
 
 
     <%- include('./partials/footer') %>
+
+    <script src="/javascripts/script.js"></script>
 
 </body>
 </html>

@@ -27,13 +27,13 @@
                     <div class="produto-misc">
                         <p class="preco">R$ <%= persona.product_price %>,00</p>
                         <a class="produto-detalhes" href="./detalhesproduto/<%= persona.id %>">Mais detalhes</a>
-                        <button class="button-carrinho">Adicionar
+                        <button class="button-carrinho" href="#">Adicionar
                             <img class="carrinho-icon" src="/images/carrinho-de-compras.png" /></button>
                     </div>
                 </div>
             </div>
 
-        <% }) %>
+            <% }) %>
             
             
         </div>
@@ -47,6 +47,8 @@
 
 
     <%- include('./partials/footer') %>
+
+    <script src="/javascripts/script.js"></script>
 
 </body>
 </html>

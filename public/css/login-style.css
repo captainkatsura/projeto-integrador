@@ -22,7 +22,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     width: 82%;
-    height: 380px;
+    padding: 12px;
     background-color: #151DA6;
 }
 
@@ -40,6 +40,10 @@ input {
     height: 26px;
     border: 1px solid #9B9B9B;
     background: plum;
+}
+
+.manter-logado {
+    align-self: center;
 }
 
 button {

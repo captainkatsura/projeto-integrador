@@ -5,7 +5,7 @@ const listagemController = require('../controllers/listagemController');
 
 
 router.get('/listagem', listagemController.index);
-router.get('/categorias', listagemController.categorias); //passar isso p/ home
+router.get('/listagem/:id', listagemController.categorias); //passar isso p/ home
 
 
 module.exports = router;

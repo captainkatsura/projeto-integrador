@@ -12,7 +12,7 @@ const listagemController = {
             res.render('listagem', { products: products })
         } catch (e) {
             console.log('e', e.message)
-            res.send('deu erro e depois eu coloco mais info aqui')
+            res.send('grrr')
         }
 
     ;

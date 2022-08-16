@@ -34,26 +34,51 @@ h1 {
 .apresentacao-container2 {
     display: flex;
     flex-direction: column;
-    width: 45vw;
-    gap: 10px;
+    width: 36vw;
     align-self: center;
+    background-color: #629cd1;
+    border: 5px groove #e4d7fc;
+    flex-flow: wrap;
 }
 
 h2 {
-    margin: -12px 8px;
+    margin: 12px;
+    text-align: center;
     text-shadow: 1px 1px 3px white;
 }
 
-.blabla {
-    color: #e3e3e3;
+.lista {
+    display: flex;
+    flex-flow: wrap;
+    gap: 12px;
+    padding: 12px 10px;
 }
 
-button {
+.arcana-list {
+
+}
+
+h3 {
+
+}
+
+.arcana-anchor {
+    border: 3px groove #151DA6;
+    background-color: rebeccapurple;
+    color: #fefefe;
+    height: 38px;
+    font-size: 18px;
+}
+
+
+.explorar {
     border: 3px groove #e4d7fc;
     background-color: #151DA6;
     color: #fefefe;
     height: 44px;
     font-size: 22px;
+    width: inherit;
+    margin: 16px 4px 6px
 }
 
 
@@ -119,9 +144,7 @@ h3 {}
     .png-home {
         height: 220px;
     }
-    .blabla {
-        display: none;
-    }
+
     .apresentacao-container2 {
         width: 40%;
         gap: 28px;
@@ -132,6 +155,19 @@ h3 {}
         font-size: 20px;
         margin: 0px;
     }
+
+    .arcana-list {
+
+    }
+    
+    h3 {
+    
+    }
+    
+    .arcana-anchor {
+    
+    }
+
     button {
         font-size: 22px;
         margin: -12px 0px 0px;

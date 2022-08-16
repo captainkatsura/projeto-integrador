@@ -67,18 +67,6 @@ app.use(compraconcluidaRouter);
 
 
 
-
-app.get('/aaa', async (req, res) => {       // **rota GET (categorias)**
-     try {
-          const arcanas = await db.Arcana.findAll()
-          res.send(arcanas)
-     } catch (e) {
-         console.log('e', e.message)
-        res.send('vish :((')
-    }
- })
-
-
 app.post('/aaa', async (req, res) => {       // **rota POST **
         const data = req.body;
 
@@ -138,8 +126,7 @@ app.put('/aaa/:id', async (req, res) => {       // **rota PUT **
 //*************** acompanhando aula CRUD sequelize abaixo */
 
 
-
-app.get('/aaa', async (req, res) => {       // ** GET para ver arcanas c/ produtos **
+app.get('/aaa', async (req, res) => {       // ** arcanas com produtos funfando **
     try {
          const arcanas = await db.Arcana.findAll({
         include: "persona"

@@ -27,8 +27,10 @@
                 <input type="email" name="email">  <br>
                 <label for="senha">Senha</label>  <br>
                 <input type="password" name="senha">  <br>
-                <input type="checkbox" name="logado">
-                <label for="">Manter logado?</label><br>
+                <div class="manter-logado">
+                    <input type="checkbox" name="logado">
+                    <label for="">Manter logado?</label>
+                </div><br>
                 <button type="submit">ENTRAR</button>
             </form>
             <a class="anchorRedirect" href="./editar">CADASTRAR-SE</a>
@@ -40,6 +42,8 @@
 
 
     <%- include('./partials/footer') %>
+
+    <script src="/javascripts/script.js"></script>
 
 </body>
 </html>
